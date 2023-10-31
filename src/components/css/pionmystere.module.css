@@ -1,0 +1,21 @@
+@keyframes changeColor {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+.mystere {
+    
+    background-color: rgb(141, 145, 214);
+   
+    background-image: url('../../assets/questionmark.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: changeColor 60s infinite linear;
+
+    border-radius: 10px;
+}
+

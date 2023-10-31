@@ -1,0 +1,20 @@
+.shadow {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+  }
+
+  .shadow2 {
+    margin-top: 35%;
+    margin-left: 20%;
+    margin-right: 15%;
+    
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 100%;
+  }
+
+  .shadow3 {
+    height: 28%;
+    margin-bottom: 5em;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+  }
