@@ -45,7 +45,9 @@ const Reglages = () => {
     }
 
     function saveSetting(nextLevel) {
-        localStorage.clear();
+        localStorage.removeItem('Yamihc_MasterMind_Setting');
+        localStorage.removeItem('Yamihc_MasterMind_Progression');
+        localStorage.removeItem('Yamihc_MasterMind_Combinaison');
         setLevel(nextLevel);
         localStorage.setItem('Yamihc_MasterMind_Setting',JSON.stringify(level));
     }

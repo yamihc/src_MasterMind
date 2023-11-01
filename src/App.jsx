@@ -17,10 +17,7 @@ function resetGame() {
 
 
 
-
 function App() {
-
-
 
 const [level,setLevel] = useState(getSetting())
 
