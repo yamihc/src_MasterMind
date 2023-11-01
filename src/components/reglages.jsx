@@ -1,49 +1,58 @@
-import { useContext} from 'react';
+import { useContext } from 'react';
 import { Level } from '../contexts/level';
 import { Button, Text, Flex } from '@radix-ui/themes';
 
 import styles from './css/nbcouleur.module.css'
 
-const Reglages = () => {
+const Reglages = ({callback}) => {
 
     const [level,setLevel] = useContext(Level);
 
     const setNbEssaisInc = () => {
         let nextLevel = {...level};
         if (nextLevel.nbEssais < 16 ) {nextLevel.nbEssais++;}
-        setLevel(nextLevel);
+        saveSetting(nextLevel);
     }
 
     const setNbEssaisDec = () => {
         let nextLevel = {...level};
         if (nextLevel.nbEssais > 5 ) {nextLevel.nbEssais--;}
-        setLevel(nextLevel);
+        saveSetting(nextLevel);
     }
 
     const setLgSequenceInc = () => {
         let nextLevel = {...level};
         if (nextLevel.lgSequence < 9 ) {nextLevel.lgSequence++;}
-        setLevel(nextLevel);
+        saveSetting(nextLevel);
     }
 
     const setLgSequenceDec = () => {
         let nextLevel = {...level};
         if (nextLevel.lgSequence > 4 ) {nextLevel.lgSequence--;}
-        setLevel(nextLevel);
+        saveSetting(nextLevel);
     }
 
     const setNbCouleursInc = () => {
         let nextLevel = {...level};
         if (nextLevel.nbCouleurs < 12 ) {nextLevel.nbCouleurs++;}
-        setLevel(nextLevel);
+        saveSetting(nextLevel);
     }
 
     const setNbCouleursDec = () => {
         let nextLevel = {...level};
         if (nextLevel.nbCouleurs > 5 ) {nextLevel.nbCouleurs--;}
-        setLevel(nextLevel);
+        saveSetting(nextLevel);
     }
-    //' bg-orange-400 py-6  h-18 w-18 rounded-full text-4xl'    className=' ml-9'
+
+    function saveSetting(nextLevel) {
+        localStorage.clear();
+        setLevel(nextLevel);
+        localStorage.setItem('Yamihc_MasterMind_Setting',JSON.stringify(level));
+        callback();
+    }
+
+ 
+
     return(
 
 
