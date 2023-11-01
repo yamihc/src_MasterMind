@@ -82,15 +82,9 @@ const [infoDialog,setInfoDialog] = useState(false);
 
 
 
-const cbReglage = () => {
-  console.log('callback');
-}
-
-
 useEffect( () => {
   setCombinaison(getCombinaison()); 
   setActivColor('rgba(0, 0, 0, 0)');
-  console.log(level);
 }, [level]);
 
 
@@ -110,7 +104,7 @@ const cssModalSetting = {
     <dialog open={setDialog}>
     <Box className='rounded-3xl' style={cssModalSetting}>
   <Level.Provider value={[level,setLevel]}>
-            <Reglages callback={cbReglage} />
+            <Reglages />
   </Level.Provider>
     </Box>
     </dialog>

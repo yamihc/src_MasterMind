@@ -4,7 +4,7 @@ import { Button, Text, Flex } from '@radix-ui/themes';
 
 import styles from './css/nbcouleur.module.css'
 
-const Reglages = ({callback}) => {
+const Reglages = () => {
 
     const [level,setLevel] = useContext(Level);
 
@@ -48,7 +48,6 @@ const Reglages = ({callback}) => {
         localStorage.clear();
         setLevel(nextLevel);
         localStorage.setItem('Yamihc_MasterMind_Setting',JSON.stringify(level));
-        callback();
     }
 
  
